@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/AdminC.css' %}"></head>
+  </head>
+  {% block content %}
+  <body>
+    <div class="custom-padding">
+      <nav>
+        <div class="logo">
+          <div>
+            <img
+              src="{% static '/images/app.png' %}"
+              alt="logo"
+              style="width: 150px; height: 100px"
+            />
+          </div>
+        </div>
+        <ul class="menu-area">
+          <li>
+            <b><a href="#">Home</a></b>
+          </li>
+          <li>
+            <b><a href="#">About</a></b>
+          </li>
+          <li>
+            <b><a href="#">services</a></b>
+          </li>
+          <li>
+            <b><a href="#">contact</a></b>
+          </li>
+          <li>
+            <b><a href="{% url 'logout' %}">Logout</a></b>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    {% if isAdmin %}
+	<center>
+<div class="boxcont">
+	<div class="box1"> 
+            <b><P> ACCEPTED CLIENTS</P></b>
+            <div class="Req">  <a href="{% url 'AdminR' %}"><button>User Requests</button> </a>
+              <div class="Req">  <a href="mailto:Client@gmail.com?subject=Security Service from Secure App"><button>Send Mail</button> </a>
+    </div>
+    <div style="height: 250px; overflow:auto;">
+<table >
+ 
+      <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Contact</th>
+	<th>CNIC</th>
+  
+  </tr>
+  {% for request in ApiRequests %}
+  <tr class="success">
+      <td>{{ request.name }}</td>
+      <td>{{ request.email }}</td>
+      <td>{{ request.phoneNumber }}</td>
+      <td>{{ request.cnic }}</td>
+  
+  </tr>
+  {% endfor %}
+  
+</table>
+</div>
+	</div>
+</div>
+</center>
+
+
+
+    {% else %}
+
+
+    <div class="container">
+
+  <div class="box">
+  <form id="contact"method="post" action="{% url 'home' %}">
+	{% csrf_token %}
+    <h3>Request For Services</h3>
+    <fieldset>
+      <input placeholder="Your name" type="text" tabindex="1" required autofocus name="nam">
+    </fieldset>
+    <fieldset>
+      <input placeholder="Your Email Address" type="email" tabindex="2" required name="mail">
+    </fieldset>
+    <fieldset>
+      <input placeholder="Your Phone Number" type="tel" tabindex="3" required name="num" minlength="11" maxlength = "11">
+    </fieldset>
+	<fieldset>
+      <input placeholder="CNIC" type="tel" tabindex="4" required name="nic" minlength="13" maxlength = "13">
+    </fieldset>
+	<div>
+       <fieldset>
+		<center>
+			<a href="{% url 'home' %}">
+			<button name="submit" type="submit" id="submit" data-submit="...Sending">Submit</button></a>
+		</center>
+      <!--
+      <input type="submit" class="button" value="Submit">
+      <center><button name="submit" type="submit" id="submit" data-submit="...Sending">Submit</button></center> -->
+    </fieldset>
+	</div>
+  </form>
+  </div>
+
+	<div class="box1">
+	<div id="contact1">
+		<center><h2 id="fh2">REVIEW!</h2></center>
+	{% if SRnam %}
+		 <div>
+		  <label><b>Name</b></label>
+			 <h4 style="font-weight: bold; font-color:black; text-align:center; color:black; background-color: #eceeef;">{{ SRnam }}</h4>
+      </div>
+	  {% if SRmail %}
+      {% endif %}
+      <div>
+		<label><b>Email Address</b></label>
+        <h4 style="font-weight: bold; font-color:black; text-align:center; color:black; background-color: #eceeef;">{{ SRmail }}</h4>
+      </div>
+      {% endif %}
+	  {% if SRnum %}
+      <div>
+		<label><b>Number</b></label>
+        <h4 style="font-weight: bold; font-color:black; text-align:center; color:black; background-color: #eceeef;">{{ SRnum }}</h4>
+      </div>
+      {% endif %}
+	  {% if SRnic %}
+      <div>
+		<label><b>CNIC</b></label>
+		<h4 style="font-weight: bold; font-color:black; text-align:center; color:black; background-color: #eceeef;">{{ SRnic }}</h4>
+      </div>
+      {% endif %}
+	</div>
+</div>
+</div>
+
+    {% endif %}
+
+  </body>
+  {% endblock %}
+</html>

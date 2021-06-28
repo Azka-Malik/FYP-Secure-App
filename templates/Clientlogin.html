@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/client.css' %}">
+</head>
+
+<body>
+<center>
+    <div class="container" id="container">
+		<center>
+			
+        <div class="form-container sign-up-container">
+
+             <form action="{% url 'ClientCreate' %}" method="post">
+                  {% csrf_token %}
+                 <h1>Create Account</h1>
+                 <div class="inputIcon">
+			<i class="fa fa-user" aria-hidden="true"></i>
+			<input type="text" placeholder="First Name" name="fname" required />
+			</div>
+			<div class="inputIcon">
+			<i class="fa fa-user" aria-hidden="true"></i>
+			<input type="text" placeholder="last Name" name="lname" required />
+			</div>
+			<div class="inputIcon">
+			<i class="fa fa-user-circle-o" aria-hidden="true"></i>
+			<input type="text" placeholder="UserName" name="username" required />
+			</div>
+			<div class="inputIcon">
+			<i class="fa fa-envelope" aria-hidden="true"></i>
+			<input type="email" placeholder="E-mail" name="email" required />
+			</div>
+			<div class="inputIcon">
+			<i class="fa fa-lock" aria-hidden="true"></i>
+			<input type="password" placeholder="Password" name="pass" required />
+			</div>
+			<div class="inputIcon">
+			<i class="fa fa-check" aria-hidden="true"></i>
+			<input type="password" placeholder="Confirm Password" name="passwordagain" />
+			</div>
+				 <center>
+                    <!-- <a href="{% url 'CLhome' %}"> -->
+						<input type="submit" class="button" value="Sign Up">
+					<!-- </a> -->
+				</center>
+             </form>
+	    </div> 
+
+
+		<div class="form-container sign-in-container">
+			{% if error %}
+			{{ error }}
+	{% endif %}
+        <form action="{% url 'Clientlogin' %}" method="post">
+            {% csrf_token %}
+            <div class="in"><h1>Sign In</h1></div>
+            <div class="inputIcon">
+			<i class="fa fa-user" aria-hidden="true"></i>
+			<input type="text" placeholder="Username" name="uname" />
+			</div>
+            <div class="inputIcon">
+			<i class="fa fa-lock" aria-hidden="true"></i>
+			<input type="password" placeholder="Password"  name="pass" />
+			</div>
+			<center><a href="{% url 'CLhome' %}"><input class="button" type="submit" value="Sign In"></a></center>
+        </form>
+      </div>
+		<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1></h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+				<div>
+                </div>
+			<div class="overlay-panel overlay-right">
+				<h1>Sign Up!</h1>
+				<p>Enter your personal details </p>
+				<button class="ghost" id="signUp">Sign Up</button>
+				<!-- <a href="{% url 'question' %}"><button class="ghost" id="signUp">Sign Up</button></a> -->
+
+			</div>
+		</div>
+	</div>
+		</center>
+	</div>
+	
+
+
+<script type="text/javascript">
+const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});
+
+</script>
+</center>
+</body>
+</html>

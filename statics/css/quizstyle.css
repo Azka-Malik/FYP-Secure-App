@@ -1,0 +1,73 @@
+@import"https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-size: cover;
+  background-image: url(/static/Images/sky.jpeg) ;
+}
+h2{
+color:black;
+
+}
+section{
+	padding: 0 100px;
+
+	height: -100vh;
+	display: flex;
+	flex-direction:column;
+	align-items: left;
+}
+
+.box{
+text-align:left;
+	postion: relative;
+	max-width: 600px;
+	padding: 50px;
+	background: rgba(10 0 0 / 70%);
+	box-shadow: 0 5px 15px rgba(0,0,0,.5);
+}
+.box h2{
+	margin: 0 0 20px;
+	padding: 0;
+	front-size: 48;
+}
+
+.textbox{
+  width: 80%;
+  overflow: hidden;
+  font-size: 20px;
+  padding: 10px 0;
+  margin: 8px 0;
+  border-bottom: 2px solid #DAA520;
+  margin-left: 50px;
+}
+.textbox i{
+  width: 26px;
+  float: center;
+  text-align: left;
+}
+.textbox input{
+  border: none;
+  outline: none;
+  background: none;
+  color: #DAA520;
+  font-size: 18px;
+  width: 80%;
+  float: left;
+  margin: 0 10px;
+}
+.btn{
+background:#39b7dd;
+color: #fff;
+  width: 40%;
+
+  border: 2px solid #26aad4;
+  color: black;
+  padding: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 12px 0;
+  text-align: center;
+  margin-left: -20px;
+}

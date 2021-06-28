@@ -1,0 +1,207 @@
+@import"https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background-image: url(/static/Images/lock.jpeg);
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	height: 100vh;
+}
+.menu-area li a {
+	text-decoration: none;
+	color: black;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	display: block;
+	padding: 0 25px;
+	font-size: 20px;
+	line-height: 30px;
+	position: relative;
+	z-index: 1;
+}
+.menu-area li {
+	list-style: none;
+	display: inline-block;
+}
+.custom-padding {
+	padding-top: 25px;
+}
+nav {
+	position: relative;
+	padding: 10px 20px 10px 10px;
+	text-align: right;
+	z-index: 1;
+	background: linear-gradient(to bottom right, #ffcccc -6%, #ff6666 68%);
+	margin: 0 auto;
+	width: calc(100% - 60px);
+}
+.logo {
+	height:50px;
+	text-transform: uppercase;
+	color: #333;
+	font-size: 30px;
+	text-align: left;
+	padding-left: 1%
+
+
+}
+.menu-area li a:hover {
+	background: #EC7063;
+	color: #fff;
+}
+nav:before {
+	position: absolute;
+	content: '';
+	left: 0;
+	top: 100%;
+	border-top: 10px solid #333;
+	border-right: 10px solid #333;
+	border-left: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+}
+nav:after {
+	position: absolute;
+	content: '';
+	border-top: 10px solid #333;
+	border-left: 10px solid #333;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	top: 100%;
+	right: 0;
+}
+.container {
+
+	width:80%;
+	margin:0 auto;
+	position:relative;
+}
+#contact input[type="text"],
+ #contact input[type="email"],
+ #contact input[type="tel"],
+ #contact textarea,
+ #contact button[type="submit"] { font:400 12px/16px "Open Sans", Helvetica, Arial, sans-serif; }
+
+#contact {
+	background:#F9F9F9;
+	padding:25px;
+	margin:50px 0;
+}
+
+#contact h3 {
+	padding-bottom:5%;
+	color: black;
+	display: block;
+	font-size: 30px;
+	font-weight: 400;
+
+}
+
+fieldset {
+	border: medium none !important;
+	margin: 0 0 10px;
+	min-width: 100%;
+	padding: 0;
+	width: 100%;
+}
+
+#contact input[type="text"],
+ #contact input[type="email"],
+ #contact input[type="tel"],
+ #contact textarea {
+	width:100%;
+	border:1px solid #CCC;
+	background:#FFF;
+	margin:0 0 5px;
+	padding:10px;
+}
+
+#contact input[type="text"]:hover,
+ #contact input[type="email"]:hover,
+ #contact input[type="tel"]:hover,
+ #contact textarea:hover {
+	-webkit-transition:border-color 0.3s ease-in-out;
+	-moz-transition:border-color 0.3s ease-in-out;
+	transition:border-color 0.3s ease-in-out;
+	border:1px solid #AAA;
+}
+
+#contact textarea {
+	height:100px;
+	max-width:100%;
+  resize:none;
+}
+
+.box{
+width:400px;
+ 
+  float:right;
+  }
+.box1{
+	width:400px;
+  
+  float:left;
+  margin-top:5%;
+  background-color:white;
+  height:365px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#contact button[type="submit"] {
+	cursor:pointer;
+	width:50%;
+	color:black;
+	margin:0 0 5px;
+	border:bold;
+	padding:10px;
+	padding-left:-10px;
+	font-size:15px;
+	font-weight:bold;
+	background-color:#FF666c;
+
+}
+
+#contact button[type="submit"]:hover {
+	background:#EC7063;
+	-webkit-transition:background 0.3s ease-in-out;
+	-moz-transition:background 0.3s ease-in-out;
+	transition:background-color 0.3s ease-in-out;
+}
+
+#contact button[type="submit"]:active { box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.5); }
+
+#contact input:focus,
+ #contact textarea:focus {
+	outline:0;
+	border:1px solid #999;
+}
+::-webkit-input-placeholder {
+ color:#888;
+}
+:-moz-placeholder {
+ color:#888;
+}
+::-moz-placeholder {
+ color:#888;
+}
+:-ms-input-placeholder {
+ color:#888;
+}
+
+@media (max-width: 400px) {
+  #fh2{
+  margin-top:5%;
+    font-size: 20px;
+  }
+}
+
+

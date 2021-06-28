@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<hr lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Questionnaire</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/quizstyle.css' %}">
+	<!-- <script language="JavaScript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+</head>
+<body text="white"/>
+
+<center><i><b><h2 style="height:100%; width:100%;color:black;text-align:center;background-color: blanchedalmond; border-radius: 2px solid;">Before Completing Your Registration Please Fill Out Appropriate Options To Support Us For Better Service Delivery
+</h2></b></i></center>
+
+
+<center>
+	<form action="{% url 'question' %}" method="post">
+	{% csrf_token %}
+<p>
+
+	<div class="box"/>
+
+Question no#1.  I am the life of the party? 
+<p>
+
+<input type="radio"  name="answer1" value="1"/> 1
+<input type="radio"  name="answer1" value="2"/> 2
+<input type="radio"  name="answer1" value="3"/> 3
+<input type="radio"  name="answer1" value="4"/> 4
+<input type="radio"  name="answer1" value="5"/> 5
+<hr>
+
+</hr>
+
+Question no#2.   I talk alot?
+<p>
+
+<input type="radio"  name="answer2" value="1"/> 1
+<input type="radio"  name="answer2" value="2"/> 2
+<input type="radio"  name="answer2" value="3"/> 3
+<input type="radio"  name="answer2" value="4"/> 4
+<input type="radio"  name="answer2" value="5"/> 5
+<hr>
+
+</hr>
+
+Question no#3.  I am not interactive and stay in the back?
+<p>
+
+<input type="radio"  name="answer3" value="1"/> 1
+<input type="radio"  name="answer3" value="2"/> 2
+<input type="radio"  name="answer3" value="3"/> 3
+<input type="radio"  name="answer3" value="4"/> 4
+<input type="radio"  name="answer3" value="5"/> 5
+<hr>
+
+</hr>
+Question no#4. I get stressed out easily?
+<p>
+
+<input type="radio"  name="answer4" value="1"/> 1
+<input type="radio"  name="answer4" value="2"/> 2
+<input type="radio"  name="answer4" value="3"/> 3
+<input type="radio"  name="answer4" value="4"/> 4
+<input type="radio"  name="answer4" value="5"/> 5
+<hr>
+
+</hr>
+
+Question no#5. I worry about things?
+<p>
+
+<input type="radio"  name="answer5" value="1"/> 1
+<input type="radio"  name="answer5" value="2"/> 2
+<input type="radio"  name="answer5" value="3"/> 3
+<input type="radio"  name="answer5" value="4"/> 4
+<input type="radio"  name="answer5" value="5"/> 5
+<hr>
+
+</hr>
+
+Question no#6   I change my mood a lot?
+<p>
+
+<input type="radio"  name="answer6" value="1"/> 1
+<input type="radio"  name="answer6" value="2"/> 2
+<input type="radio"  name="answer6" value="3"/> 3
+<input type="radio"  name="answer6" value="4"/> 4
+<input type="radio"  name="answer6" value="5"/> 5
+<hr>
+
+</hr>
+
+Question no#7.   I care about people?
+<p>
+
+<input type="radio"  name="answer7" value="1"/> 1
+<input type="radio"  name="answer7" value="2"/> 2
+<input type="radio"  name="answer7" value="3"/> 3
+<input type="radio"  name="answer7" value="4"/> 4
+<input type="radio"  name="answer7" value="5"/> 5
+<hr>
+
+</hr>
+
+Question no#8.   I understand other's feelings?
+<p>
+
+<input type="radio"  name="answer8" value="1"/> 1
+<input type="radio"  name="answer8" value="2"/> 2
+<input type="radio"  name="answer8" value="3"/> 3
+<input type="radio"  name="answer8" value="4"/> 4
+<input type="radio"  name="answer8" value="5"/> 5
+<hr>
+
+</hr>
+
+Question no#9.  I have a soft heart?
+<p>
+
+<input type="radio"  name="answer9" value="1"/> 1
+<input type="radio"  name="answer9" value="2"/> 2
+<input type="radio"  name="answer9" value="3"/> 3
+<input type="radio"  name="answer9" value="4"/> 4
+<input type="radio"  name="answer9" value="5"/> 5
+<hr>
+
+</hr>
+
+Question no#10.  I am careless about my things?
+<p>
+
+<input type="radio"  name="answer10" value="1"/> 1
+<input type="radio"  name="answer10" value="2"/> 2
+<input type="radio"  name="answer10" value="3"/> 3
+<input type="radio"  name="answer10" value="4"/> 4
+<input type="radio"  name="answer10" value="5"/> 5
+<hr>
+
+</hr>
+
+Question no#11.  I pay attention to details?
+<p>
+
+<input type="radio"  name="answer11" value="1"/> 1
+<input type="radio"  name="answer11" value="2"/> 2
+<input type="radio"  name="answer11" value="3"/> 3
+<input type="radio"  name="answer11" value="4"/> 4
+<input type="radio"  name="answer11" value="5"/> 5
+<hr>
+
+</hr>
+
+Question no#12.  I like doing things in an organized manner?
+<p>
+
+<input type="radio"  name="answer12" value="1"/> 1
+<input type="radio"  name="answer12" value="2"/> 2
+<input type="radio"  name="answer12" value="3"/> 3
+<input type="radio"  name="answer12" value="4"/> 4
+<input type="radio"  name="answer12" value="5"/> 5
+<hr>
+
+</hr>
+Question no#13.  I have a rich vocabulary?
+<p>
+
+<input type="radio"  name="answer13" value="1"/> 1
+<input type="radio"  name="answer13" value="2"/> 2
+<input type="radio"  name="answer13" value="3"/> 3
+<input type="radio"  name="answer13" value="4"/> 4
+<input type="radio"  name="answer13" value="5"/> 5
+<hr>
+
+</hr>
+
+Question no#14.  I am quick to understand things?
+<p>
+
+<input type="radio"  name="answer14" value="1"/> 1
+<input type="radio"  name="answer14" value="2"/> 2
+<input type="radio"  name="answer14" value="3"/> 3
+<input type="radio"  name="answer14" value="4"/> 4
+<input type="radio"  name="answer14" value="5"/> 5
+<hr>
+
+</hr>
+
+Question no#15.  I am full of ideas?
+<p>
+
+<input type="radio"  name="answer15" value="1"/> 1
+<input type="radio"  name="answer15" value="2"/> 2
+<input type="radio"  name="answer15" value="3"/> 3
+<input type="radio"  name="answer15" value="4"/> 4
+<input type="radio"  name="answer15" value="5"/> 5
+<hr>
+
+</hr>
+
+<center><input class="btn" type="submit" value="submit"></center>
+
+</form>
+</center>
+
+</section>
+</body>
+	</html>

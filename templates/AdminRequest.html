@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Request</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/AdminR.css' %}" />
+  </head>
+  <body>
+    <div class="custom-padding">
+      <nav>
+        <div class="logo">
+          <img
+            src="{% static '/images/app.png' %}"
+            alt="logo"
+            style="width: 150px; height: 100px"
+          />
+        </div>
+        <ul class="menu-area">
+          <li>
+            <b><a href="{% url 'logout' %}">Logout</a></b>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <center>
+      <div class="boxcont">
+        <div class="box1">
+          <p><b>REQUESTS</b></p>
+          {% block content %}
+          <table>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Contact</th>
+              <th>CNIC</th>
+              <th colspan="3">Status</th>
+            </tr>
+            {% for request in ApiRequests %}
+            <tr class="success">
+              <td>{{ request.id }}</td>
+              <td>{{ request.name }}</td>
+              <td>{{ request.email }}</td>
+              <td>{{ request.phoneNumber }}</td>
+              <td>{{ request.cnic }}</td>
+              <td>
+                <form method="POST" action="" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  <div style="padding-top: 2%; text-align: center">
+                    <input
+                      style="background: red; width: 0px; visibility: hidden"
+                      name="work"
+                      value="{{request.id}}"
+                    />
+                    <input
+                      type="radio"
+                      id="accept"
+                      name="status"
+                      value="Accept"
+                    />
+                    <label for="accept">Accept</label><br />
+                    <input
+                      type="radio"
+                      id="reject"
+                      name="status"
+                      value="Reject"
+                    />
+                    <label for="reject">Reject</label><br />
+                    <div
+                      class="d-flex justify-content-center mt-3 login_container"
+                    >
+                      <input
+                        class="btn login_btn"
+                        type="submit"
+                        value="Update"
+                      />
+                    </div>
+                  </div>
+                  <!-- <td><center><button>Accept</button> <button>Deny</button></center></td> -->
+                </form>
+              </td>
+            </tr>
+            {% endfor %}
+          </table>
+          {% endblock %}
+        </div>
+      </div>
+    </center>
+  </body>
+</html>

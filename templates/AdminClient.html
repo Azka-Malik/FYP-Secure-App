@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>client</title>
+{% load static %}
+    <link rel="stylesheet" href="{% static 'css/AdminC.css' %}"></head>
+<body>
+	<div class="custom-padding">
+		<nav>
+			<div class="logo">
+                <div>
+                	<img src="{% static '/images/app.png' %}" alt="logo" style="width:150px; height:100px;">
+                </div>
+			</div><ul class="menu-area">
+				<li>
+					<b><a href="{% url 'logout' %}">Logout</a></b>
+				</li>
+			</ul>
+		</nav>
+	</div>
+	<center>
+<div class="boxcont">
+	<div class="box1">
+
+        <b><P>ACCEPTED CLIENTS</P></b>
+            <div class="Req">  <a href="{% url 'AdminR' %}"><button>User Requests</button> </a>
+    </div>
+    {% block content %}
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Contact</th>
+	  <th>CNIC</th>
+    
+  </tr>
+  {% for request in ApiRequests %}
+  <tr class="success">
+      <td>{{ request.name }}</td>
+      <td>{{ request.email }}</td>
+      <td>{{ request.phoneNumber }}</td>
+      <td>{{ request.cnic }}</td>
+
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}
+	</div>
+</div>
+</center>
+</body>
+</html>
